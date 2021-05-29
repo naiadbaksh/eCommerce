@@ -7,7 +7,7 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component.jsx';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 const HatsPage = () => (
   <div>
@@ -24,13 +24,28 @@ class App extends React.Component {
     }
   }
 
-  unsubscibeFromAuth = null;
   
-
+  // Check if user signs in, check if sign in is successful. If there is document already, we get it back. If none, we create a new one. We use snapshot to track any changes, and set the state. If user logs out, set current user to null via userAuth.  
+  unsubscibeFromAuth = null;
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-     this.setState({ currentUser: user});
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
 
+        userRef.onSnapshot(snapShot => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+          },
+          () => {console.log(this.state);}
+          )
+        });
+      }
+      else {
+        this.setState({ currentUser : userAuth });
+      }
    }); 
   }
 
