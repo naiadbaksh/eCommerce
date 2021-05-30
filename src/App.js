@@ -24,9 +24,9 @@ class App extends React.Component {
     }
   }
 
-  
+  unsubscribeFromAuth = null;
   // Check if user signs in, check if sign in is successful. If there is document already, we get it back. If none, we create a new one. We use snapshot to track any changes, and set the state. If user logs out, set current user to null via userAuth.  
-  unsubscibeFromAuth = null;
+  
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -38,19 +38,13 @@ class App extends React.Component {
               id: snapShot.id,
               ...snapShot.data()
             }
-          },
-          () => {console.log(this.state);}
-          )
         });
-      }
-      else {
-        this.setState({ currentUser : userAuth });
-      }
-   }); 
-  }
+        console.log(this.state);
+      }); 
+    }
 
-  componentWillUnmount() {
-    this.unsubscribeFromAuth(); 
+    this.setState({ currentUser: userAuth });  
+    });
   }
 
   render() {
