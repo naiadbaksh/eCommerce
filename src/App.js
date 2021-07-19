@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import styled from 'styled-components';
 
 import './App.css';
 import HomePage from './pages/homepage/homepage.component';
