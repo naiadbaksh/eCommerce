@@ -1,45 +1,50 @@
 const INITIAL_STATE = {
-    sections: [
-        {
-          title: 'hats',
-          imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-          id: 1,
-          linkUrl: 'shop/hats'
-        },
-        {
-          title: 'jackets',
-          imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-          id: 2,
-          linkUrl: 'shop/jackets'
-        },
-        {
-          title: 'sneakers',
-          imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-          id: 3,
-          linkUrl: 'shop/sneakers'
-        },
-        {
-          title: 'womens',
-          imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-          size: 'large',
-          id: 4,
-          linkUrl: 'shop/womens'
-        },
-        {
-          title: 'mens',
-          imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-          size: 'large',
-          id: 5,
-          linkUrl: 'shop/mens'
-        }
-      ]
+  sections: [
+    {
+      title: "coats",
+      imageUrl:
+        "https://cdn.suitsupply.com/image/upload/ar_10:22,b_rgb:efefef,bo_300px_solid_rgb:efefef,c_pad,g_north,w_2600/b_rgb:efefef,c_lfill,g_north,dpr_1,h_1728,w_1440,f_auto,q_auto,fl_progressive/products/Coats/default/J822_1.jpg",
+      id: 1,
+      linkUrl: "shop/coats",
+    },
+    {
+      title: "shirts",
+      imageUrl:
+        "https://cdn.suitsupply.com/image/upload/ar_10:22,b_rgb:efefef,bo_300px_solid_rgb:efefef,c_pad,g_north,w_2600/b_rgb:efefef,c_lfill,g_north,dpr_1,h_1728,w_1440,f_auto,q_auto,fl_progressive/products/Shirts/default/H6407_1.jpg",
+      id: 2,
+      linkUrl: "shop/shirts",
+    },
+    {
+      title: "shoes",
+      imageUrl:
+        "https://cdn.suitsupply.com/image/upload/c_pad,g_center,w_2600,b_rgb:efefef,bo_200px_solid_rgb:efefef/b_rgb:efefef,c_lpad,g_center,dpr_1,h_1728,w_1440,f_auto,q_auto,fl_progressive/products/Shoes/default/FW1003_1.jpg",
+      id: 3,
+      linkUrl: "shop/shoes",
+    },
+    {
+      title: "suits",
+      imageUrl:
+        "https://cdn.suitsupply.com/image/upload/ar_10:22,b_rgb:efefef,bo_300px_solid_rgb:efefef,c_pad,g_north,w_2600/b_rgb:efefef,c_lfill,g_north,dpr_1,h_1728,w_1440,f_auto,q_auto,fl_progressive/products/Suits/default/P6307_1.jpg",
+      size: "large",
+      id: 4,
+      linkUrl: "shop/suits",
+    },
+    {
+      title: "eveningwear",
+      imageUrl:
+        "https://cdn.suitsupply.com/image/upload/ar_10:22,b_rgb:efefef,bo_300px_solid_rgb:efefef,c_pad,g_north,w_2600/b_rgb:efefef,c_lfill,g_north,dpr_1,h_1728,w_1440,f_auto,q_auto,fl_progressive/products/Jackets/default/C1199_1.jpg",
+      size: "large",
+      id: 5,
+      linkUrl: "shop/eveningwear",
+    },
+  ],
 };
 
 const directoryReducer = (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
+  switch (action.type) {
+    default:
+      return state;
+  }
 };
 
 export default directoryReducer;
