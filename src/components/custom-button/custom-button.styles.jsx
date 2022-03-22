@@ -52,12 +52,11 @@ export const CustomButtonContainer = styled.button`
   padding: 0 35px 0 35px;
   font-size: 15px;
   text-transform: uppercase;
-  font-family: "Open Sans Condensed";
   font-weight: bolder;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  font-family: "Avenir";
+  font-family: "Avenir", "Nunito";
   border-radius: 10px;
 
   ${getButtonStyles}
